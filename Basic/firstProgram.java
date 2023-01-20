@@ -29,7 +29,7 @@ public class firstProgram {
         System.out.println("Name1:" +" "+ StudA + " " +"Name2:"+ " " +StudB + " "+ "Name 3:" + " " +StudC);
 
         System.out.println("The average grade is:");
-        float averageGrade = (gradeA+gradeB+gradeC)/3;
+        float averageGrade = (float)(gradeA+gradeB+gradeC)/3;
         System.out.println("The average grade score");
         System.out.println(averageGrade);
 
