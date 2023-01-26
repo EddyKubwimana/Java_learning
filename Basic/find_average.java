@@ -2,13 +2,18 @@ import java.util.Scanner;
 
 public class find_average{
     public static void main(String[] args){
-        System.out.println("Hello there, Hope you are doing well");
-        System.out.println();
+        
+        // Greetings and taking users names
+
+        System.out.println("\n Hello there, Hope you are doing well");
         System.out. println(" I am going to ask the name of player number 1 and player number to make it easier to play for you guys!!!");
         System.out.println();
         Scanner keyboard = new Scanner(System.in);
         System.out.println("Who want to be player 1? Please enter the name you want that I refer to throughout the game");
         String name1 = keyboard.nextLine();
+
+        // Taking the number of cards to play
+        
         System.out.println("Who want to be player 2? Please enter the name you want that I refer to throughout the game");
         String name2 = keyboard.nextLine();
         System.out.println("How many cards you want to play guys???");
