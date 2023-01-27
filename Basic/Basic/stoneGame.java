@@ -1,12 +1,11 @@
 import java.util.Scanner;
-
 public class stoneGame{
     public static void main(String[] args){
         
         // Greetings and taking users names
 
         System.out.println("\n Hello there, Hope you are doing well");
-        System.out. println(" I am going to ask the name of player number 1 and player number to make it easier to play for you guys!!!");
+        System.out. println(" I am going to ask the name of player number 1 and player number 2 to make it easier to play for you guys!!!");
         System.out.println();
         Scanner keyboard = new Scanner(System.in);
         System.out.println("Who want to be player 1? Please enter the name you want that I refer to throughout the game");
@@ -16,7 +15,7 @@ public class stoneGame{
 
         // Taking the number of  stones to play
 
-        System.out.println("How many cards you want to play guys???");
+        System.out.println("How many stones you want to play guys???");
         int numberStones = 0;
         int check = 0;
 
@@ -65,20 +64,30 @@ public class stoneGame{
                 System.out.println(playerTwoName+ " has already drawn " + playerTwoStones);
 
                 System.out.println("Stones status :" + numberStones );  
-                System.out.println("It is your turn  " + playerTwoName + " : "+ " How many stones are you drawing ?");
+                System.out.println("It is your turn  " + playerTwoName + " (Player2)" + " : "+ " How many stones are you drawing ?");
                  
                 // taking user 
-                int drawData = keyboard.nextInt();
-                if (drawData<= numberStones){
-                    numberStones -= drawData;
-                    playerTwoStones+= drawData;
-                    counter+= 1;
-                }
-                else{
-                    System.out.println("Sorry " + playerTwoName + " : "+ " The stones you draw are greater than the half of stones");
-                    counter+= 0;
+                try{
+                    Scanner stonesDraw = new Scanner(System.in);
+                    int drawData = stonesDraw.nextInt();
+                    if (drawData<= numberStones && drawData>0 ){
+                        numberStones -= drawData;
+                        playerTwoStones+= drawData;
+                        counter+= 1;
+                    }
+                    else{
+                        System.out.println("Sorry " + playerTwoName + " : "+ " The stones you draw are not valid, please follow instruction and try again!");
+                    }
+                   
+                        
+            
+                  }
+                catch(Exception e){
+                    System.out.println("Sorry " + playerTwoName + " : "+ " The stones you draw are not valid, please follow instruction and try again!");
+                        counter+= 0;
 
                 }
+
             }
             else{
                 
@@ -88,38 +97,40 @@ public class stoneGame{
                 System.out.println(playerTwoName+ " has already drawn " + playerTwoStones);
 
                 System.out.println("Stones status :" + numberStones );  
-                System.out.println("It is your turn  " + playerOneName + " : "+ " How many stones are you drawing?");
+                System.out.println("It is your turn  " + playerOneName + " (Player 1) " + " : "+ " How many stones are you drawing?");
                  
                 // taking player stones numbers
-
-                int drawData = keyboard.nextInt();
-                if (drawData<= numberStones){
-                    numberStones-= drawData;
-                    playerOneStones+= drawData;
-                    counter+= 1;
-
-
-                }
-                else{
-                    System.out.println("Sorry " + playerOneName + " : "+ " The stones you draw are greater than the half of the stones");
-                    counter+= 0;
-
+                try{
+                    Scanner stonesDraw2 = new Scanner(System.in);
+                    int drawData = stonesDraw2.nextInt();
+                    if (drawData<= numberStones && drawData>0){
+                        numberStones-= drawData;
+                        playerOneStones+= drawData;
+                        counter+= 1;
+                    }
+                    else{
+                        System.out.println("Sorry " + playerTwoName + " : "+ " The stones you draw are not valid, please follow instruction and try again!");
+                    }
                 }
 
-            }
+                catch (Exception e){
+                    System.out.println("Sorry " + playerOneName + " : "+ " The stones you draw are invalid please follow instruction and try again!");
+                    counter+= 0;}
                 
 
             }
+        }
+
         /* That is where the program declare result for players , here i the conditional statement check the player
          * whose stones number is odd and declare him a winner
          */
 
         if ( playerOneStones %2 == 1){
-            System.out.println("Congratulations " + playerOneName + "  You are the winner");
+            System.out.println("Congratulations " + playerOneName + "  You are the winner with "+ playerOneStones + "  Stones !!!");
 
         }
         else{
-            System.out.println("Congratulations " + playerTwoName + "  You are the winner");
+            System.out.println("Congratulations " + playerTwoName + "  You are the winner "+ playerTwoStones + "  Stones !!!");
         }
     }
 }
