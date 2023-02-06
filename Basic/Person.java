@@ -23,6 +23,9 @@ public class Person{
     public void setAgePerson(int agePerson){
         if (agePerson>0){
             this.agePerson = agePerson;
+        }else{
+            System.out.println("invalid age, the system is out!");
+            System.exit(1);
         }
         
 
@@ -35,6 +38,10 @@ public class Person{
     public void setGenderPerson(String genderPerson){
         if ( genderPerson.equalsIgnoreCase("female") || genderPerson.equalsIgnoreCase("male")){
             this.genderPerson = genderPerson;
+        }
+        else{
+            System.out.println("Invalid gender input, the system is out!");
+            System.exit(0);
         }
 
     }
@@ -77,7 +84,7 @@ public class Person{
 
         // testing the setters
 
-        person1.setGenderPerson("male");
+        person1.setGenderPerson("ma");
         person1.setAgePerson(50);
         person1.setNamePerson("KUBWIMANA");
 
