@@ -19,17 +19,32 @@ public class IntegerInput{
     }
     public int getValues(){
         // variable to store the input from the user
-        int value;
-        Scanner key= new Scanner(System.in); // scanner object 
-
-
+        int value = 0;
         // do  while loop to check if the user entered accepted input
       do { 
 
-        // prompt the user to know what to input
-        System.out.println(this.prompt);
+         int checker = 0;
+       do{
+         // prompt the user to know what to input
+         System.out.println(this.prompt);
+         
+         try{
+          Scanner key= new Scanner(System.in); // scanner object
+          value = key.nextInt();
+          int verifier  = value/2;
+          checker = 1;
 
-        value = key.nextInt();
+         }catch( Exception e){
+          System.out.println(" invalid input, please enter an integer");
+         }
+
+       }
+       while (checker == 0);
+        
+        if (value > this.maximum || value < this.minimum){
+          System.out.println("the numbers does not respect this instruction  "+ this.prompt +"  please try again!");
+
+        }
         
         // condition to check if the value input is accepted
       } while (value > this.maximum || value < this.minimum );
@@ -41,25 +56,6 @@ public class IntegerInput{
     
     } 
 
-    public static void main(String[] args){
-
-        // test
-        IntegerInput interval = new IntegerInput();
-        interval.setInputParamaters(20, -20, "Enter a number which is less than 20 and greater than - 20");
-        int intValidinput = interval.getValues();
-        System.out.println("The valid input is  :" + intValidinput);
-
-
-
-        /*
-         * In the game of stones, I would have created a class object to check valid input
-         * It would have been helpful to shorten the code and ensure clarity when taking number of stones and when playeers
-         * were choosing numbers of stones
-         * 
-         * 
-         */
-
-
-    }
+    
 
 }
