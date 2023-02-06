@@ -21,6 +21,7 @@ public class TestPerson{
 
         // Setting different names, ages, and gender to both them
         // for  person 1, I used a negative negative number and it won't accept it, it will keep the old age
+
         person1.setAgePerson(-20);
 
         // here person 2 age is going to change
