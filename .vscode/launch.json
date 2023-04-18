@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Cube",
+            "request": "launch",
+            "mainClass": "Cube",
+            "projectName": "class activity_f21f2db3"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
