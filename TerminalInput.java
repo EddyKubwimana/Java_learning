@@ -16,13 +16,24 @@ public class TerminalInput{
          else if (args[0].equals("sub")){
 
 
+            Double sub = Double.parseDouble(args[1])-Double.parseDouble(args[2]);
+
+            System.out.println(sub);
+
+
+
+         }
+
+         else if (args[0].equals("multiply")){
             Double product = Double.parseDouble(args[1])*Double.parseDouble(args[2]);
 
             System.out.println(product);
 
 
-
          }
+
+
+
 
 
 
